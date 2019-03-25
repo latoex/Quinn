@@ -12,11 +12,11 @@ defmodule Quinn.XmlParser do
     |> parse_record(options)
   end
 
-  defp combine_values([]), do: []
+  defp combine_values([]), do: ""
 
   defp combine_values(values) do
     if Enum.all?(values, &(is_binary(&1))) do
-      [List.to_string(values)]
+      List.to_string(values)
     else
       values
     end

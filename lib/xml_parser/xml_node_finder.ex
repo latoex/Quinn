@@ -7,6 +7,7 @@ defmodule Quinn.XmlNodeFinder do
 
   def find([], _), do: []
   def find(nil, _), do: []
+  def find(value, _) when is_bitstring(value), do: []
   def find([value], _) when is_binary(value), do: []
   def find([value | _], _) when is_binary(value), do: []
 
